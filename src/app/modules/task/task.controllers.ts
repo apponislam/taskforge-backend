@@ -69,6 +69,8 @@ const updateTask = catchAsync(async (req: Request, res: Response) => {
     const userId = req.user?._id;
     // @ts-ignore
     const userRole = req.user?.role;
+    console.log('task.controller.ts updateTask: req.user =', req.user);
+    console.log('task.controller.ts updateTask: userId =', userId, ', userRole =', userRole);
     const result = await TaskServices.updateTask(id as string, req.body, userId, userRole);
 
     sendResponse(res, {

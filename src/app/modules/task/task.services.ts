@@ -96,13 +96,19 @@ const getTaskById = async (id: string) => {
 };
 
 const updateTask = async (id: string, payload: Partial<ITask>, userId?: string, userRole?: string) => {
+    console.log("updateTask called with:", { id, payload, userId, userRole });
     const task = await Task.findById(id);
     if (!task) {
         throw new ApiError(httpStatus.NOT_FOUND, "Task not found");
     }
 
+    // console.log("Found task:", task);
+    // console.log("task.assignedMember:", task.assignedMember);
+    // console.log("Comparing:", task.assignedMember?.toString(), "===", userId);
+
     // 3. Team members can only update assigned tasks
-    if (userRole === "team_member" && task.assignedMember?.toString() !== userId) {
+    console.log("Comparing strings:", task.assignedMember?.toString(), "===", userId);
+    if (userRole === "team_member" && task.assignedMember?.toString() !== userId?.toString()) {
         throw new ApiError(httpStatus.FORBIDDEN, "You can only update your assigned tasks");
     }
 
