@@ -9,7 +9,7 @@ import router from "./app/routes";
 const app: Application = express();
 
 const corsOptions = {
-    origin: ["http://localhost:3000", "https://order-management-frontend-nine.vercel.app"],
+    origin: ["http://localhost:3000", "http://localhost:3333"],
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
