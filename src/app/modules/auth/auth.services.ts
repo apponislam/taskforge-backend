@@ -97,21 +97,21 @@ const getAllUsers = async (page?: number, limit?: number, searchTerm?: string) =
 const seedDemoUsers = async () => {
     const demoUsers = [
         {
-            name: "Admin User",
+            name: "John Doe",
             email: "admin@demo.com",
-            password: "admin123",
+            password: "123456",
             role: "admin",
         },
         {
-            name: "Project Manager",
+            name: "Sarah Johnson",
             email: "manager@demo.com",
-            password: "manager123",
+            password: "123456",
             role: "project_manager",
         },
         {
-            name: "Team Member",
+            name: "Mike Chen",
             email: "member@demo.com",
-            password: "member123",
+            password: "123456",
             role: "team_member",
         },
     ];

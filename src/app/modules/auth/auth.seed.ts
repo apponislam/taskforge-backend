@@ -13,9 +13,9 @@ export const seedAdmin = async () => {
             console.log("📝 No admin found, creating one...");
 
             const adminData: IUser = {
-                name: "Admin User",
+                name: "John Doe",
                 email: config.superAdminEmail as string,
-                password: config.superAdminPassword as string,
+                password: "123456",
                 role: "admin",
             };
 
@@ -31,9 +31,9 @@ export const seedAdmin = async () => {
         if (!managerExists) {
             console.log("📝 No project manager found, creating one...");
             const managerData: IUser = {
-                name: "Project Manager",
+                name: "Sarah Johnson",
                 email: "manager@demo.com",
-                password: "manager123",
+                password: "123456",
                 role: "project_manager",
             };
             await User.create(managerData);
@@ -45,9 +45,9 @@ export const seedAdmin = async () => {
         if (!memberExists) {
             console.log("📝 No team member found, creating one...");
             const memberData: IUser = {
-                name: "Team Member",
+                name: "Mike Chen",
                 email: "member@demo.com",
-                password: "member123",
+                password: "123456",
                 role: "team_member",
             };
             await User.create(memberData);
@@ -55,7 +55,6 @@ export const seedAdmin = async () => {
         }
 
         console.log("✅ All demo users seeded successfully!");
-
     } catch (error) {
         console.error("❌ Error seeding users:", error);
     }
